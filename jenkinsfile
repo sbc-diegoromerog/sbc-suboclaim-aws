@@ -18,7 +18,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git branch: 'devops', url: 'https://github.com/sbc-diegoromerog/sbc-suboclaim-aws'
+                            git branch: 'SBC-001', url: 'https://github.com/sbc-diegoromerog/sbc-suboclaim-aws'
                         }
                     }
                 }
