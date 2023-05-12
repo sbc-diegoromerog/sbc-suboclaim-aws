@@ -1,11 +1,12 @@
-name: Terraform
+name: Terraform develop
 on:
   pull_request:
     branches: [develop]
+    types: [closed]
 
 jobs:
-  terraform:
-    name: "Terraform"
+  terraform_init:
+    name: "Terraform_Init"
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEVELOP }}
@@ -31,6 +32,10 @@ jobs:
         id: init
         run: terraform init
 
-      - name: Terraform Plan
+  terraform_apply:
+    if: ${{ github.event.pull_request.merged }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Terraform Apply
         id: plan
         run: terraform plan -no-color
