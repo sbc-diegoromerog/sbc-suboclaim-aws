@@ -7,6 +7,6 @@ locals {
   tags = {
     origin     = "terraform"
     enviroment = "dev"
-    ceco       = "sbc-suboclaims"
+    project    = "sbc-suboclaims"
   }
 }
