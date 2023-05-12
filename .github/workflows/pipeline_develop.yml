@@ -4,8 +4,8 @@ on:
     branches: [develop]
 
 jobs:
-  terraform_init:
-    name: "Terraform_Init"
+  Check_Plan:
+    name: "Check Plan"
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEVELOP }}
@@ -31,7 +31,8 @@ jobs:
         id: init
         run: terraform init
 
-  terraform_apply:
+  Apply:
+    name: "Apply"
     if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     env:
