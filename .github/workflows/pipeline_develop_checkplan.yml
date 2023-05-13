@@ -15,7 +15,8 @@ jobs:
         working-directory: src
     steps:
       - uses: actions/checkout@v2
-      - run: echo "::set-env name=BRANCH_NAME::${{ github.head_ref }}"
+      # - run: echo "::set-env name=BRANCH_NAME::${{ github.head_ref }}"
+      - run: echo "github.head_ref >> $BRANCH_NAME"
       - name: Checkout
         uses: actions/checkout@v2
 
