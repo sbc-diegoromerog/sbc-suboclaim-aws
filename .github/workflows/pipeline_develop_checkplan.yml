@@ -15,7 +15,6 @@ jobs:
         working-directory: src
     steps:
 
-      - run: echo "Deploying to production server on branch $GITHUB_REF
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -31,7 +30,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init -var="branch_name=${{ github.ref }}"
+        run: terraform init -var="branch_name=dev"
 
       - name: Terraform Validate
         id: validate
@@ -39,4 +38,4 @@ jobs:
 
       - name: Terraform plan
         id: plan
-        run: terraform plan -var="branch_name=${{ github.ref }}"
+        run: terraform plan -var="branch_name=dev"
