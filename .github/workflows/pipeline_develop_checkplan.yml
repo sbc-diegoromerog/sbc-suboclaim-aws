@@ -33,7 +33,7 @@ jobs:
 
       - name: Terraform Validate
         id: validate
-        run: terraform validate -var="branch_name=$BRANCH_NAME"      
+        run: terraform validate
 
       - name: Terraform plan
         id: plan
