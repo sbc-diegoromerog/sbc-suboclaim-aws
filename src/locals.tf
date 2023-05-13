@@ -2,11 +2,11 @@ locals {
   aws_region  = "us-east-1"
   company     = "sbc"
   product     = "suboclaims"
-  environment = "dev"
+  environment = var.branch_name
 
   tags = {
     origin     = "terraform"
-    enviroment = "dev"
+    enviroment = var.branch_name
     project    = "sbc-suboclaims"
   }
 }
