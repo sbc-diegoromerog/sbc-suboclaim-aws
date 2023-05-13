@@ -29,12 +29,12 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -var="branch_name=$BRANCH_NAME"
 
       - name: Terraform Validate
         id: validate
-        run: terraform validate        
+        run: terraform validate -var="branch_name=$BRANCH_NAME"      
 
       - name: Terraform plan
         id: plan
-        run: terraform plan -no-color           
+        run: terraform plan -var="branch_name=$BRANCH_NAME"
