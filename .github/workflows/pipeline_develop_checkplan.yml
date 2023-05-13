@@ -14,9 +14,8 @@ jobs:
       run:
         working-directory: src
     steps:
-      # - uses: actions/checkout@v2
-      # # - run: echo "::set-env name=BRANCH_NAME::${{ github.head_ref }}"
-      # - run: echo "github.head_ref >> $BRANCH_NAME"
+
+      - run: echo "Deploying to production server on branch $GITHUB_REF
       - name: Checkout
         uses: actions/checkout@v2
 
