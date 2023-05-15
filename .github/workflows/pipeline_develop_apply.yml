@@ -35,7 +35,7 @@ jobs:
 
       - name: Terraform plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform plan -var="branch_name=dev"
 
       - name: Terraform apply
-        run: terraform apply -auto-approve
+        run: terraform apply -var="branch_name=dev" -auto-approve
